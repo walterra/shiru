@@ -1,6 +1,6 @@
 {
   "name": "shiru",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Wrap javascript functions in a type checker.",
   "main": "build/shiru.js",
   "repository": {
