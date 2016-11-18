@@ -1,0 +1,40 @@
+{
+  "name": "shiru",
+  "version": "1.0.0-alpha.1",
+  "description": "Wrap javascript functions in a type checker.",
+  "main": "build/shiru.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walterra/shiru.git"
+  },
+  "keywords": [
+    "javascript",
+    "types",
+    "functions"
+  ],
+  "author": "Walter Rafelsberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/walterra/shiru/issues"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n shiru -o build/shiru.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/shiru.js -c -m -o build/shiru.min.js",
+    "postpublish": "zip -j build/shiru.zip -- LICENSE README.md build/shiru.js build/shiru.min.js"
+  },
+  "devDependencies": {
+    "catw": "^1.0.1",
+    "eslint": "^3.8.1",
+    "eslint-config-es5": "^0.5.0",
+    "rollup": "^0.36.3",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-watch": "^2.5.0",
+    "tape": "4",
+    "uglify-js": "2"
+  },
+  "homepage": "https://github.com/walterra/shiru#readme",
+  "dependencies": {
+    "avocado-type-checker": "^1.0.0-alpha.3"
+  }
+}
