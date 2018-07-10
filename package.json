@@ -20,7 +20,7 @@
   "scripts": {
     "pretest": "rm -rf build && mkdir build && rollup -f umd -n shiru -o build/shiru.js -- index.js",
     "test": "tape 'test/**/*-test.js'",
-    "prepublish": "npm run test && uglifyjs build/shiru.js -c -m -o build/shiru.min.js",
+    "prepublishOnly": "npm run test && uglifyjs build/shiru.js -c -m -o build/shiru.min.js",
     "postpublish": "zip -j build/shiru.zip -- LICENSE README.md build/shiru.js build/shiru.min.js"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "rollup-plugin-eslint": "^3.0.0",
     "rollup-watch": "^2.5.0",
     "tape": "4",
-    "uglify-js": "2"
+    "uglify-js": "~>2.6.0"
   },
   "homepage": "https://github.com/walterra/shiru#readme",
   "dependencies": {
