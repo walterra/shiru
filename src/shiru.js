@@ -1,8 +1,7 @@
-var avocado = require('avocado-type-checker');
+import avocado from 'avocado-type-checker';
 
 export default function(f) {
   var arguments_test;
-  var return_test;
 
   var error = function(msg) {
     throw new Error(msg);
@@ -43,11 +42,6 @@ export default function(f) {
   // arguments tester
   shiru.args = function() {
     arguments_test = arguments;
-    return shiru;
-  };
-
-  shiru.return = function(tester) {
-    return_test = tester;
     return shiru;
   };
 

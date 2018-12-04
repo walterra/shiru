@@ -4,12 +4,13 @@ var s = require('../');
 test('test shiru', function(t) {
   // testing a function with one argument as a integer
   var int = 1;
+  var str = '1';
   var intReturn;
 
   var intFunction = s(function(myInt) {
     return myInt + '';
   })
-  .args(s().type.int);
+  .args(s().type('int'));
 
   t.doesNotThrow(function() {
     intReturn = intFunction(int);
@@ -19,7 +20,7 @@ test('test shiru', function(t) {
 
   t.throws(function() {
     // should only accept an integer
-    intFunction('1');
+    intFunction(str);
   }, 'don\'t accept a string.');
 
   var f = s(function(myInt, myString) {
@@ -28,7 +29,7 @@ test('test shiru', function(t) {
       myString: myString
     };
   })
-  .args(s().type.int, s().type.string);
+  .args(s().type('int'), s().type('string'));
 
   t.doesNotThrow(function() {
     f(1, '1');

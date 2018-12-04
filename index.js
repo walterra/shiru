@@ -1,1 +1,1 @@
-export {default} from './src/shiru';
+export { default } from './src/shiru';
