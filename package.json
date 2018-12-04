@@ -24,7 +24,6 @@
     "postpublish": "zip -j build/shiru.zip -- LICENSE README.md build/shiru.js build/shiru.min.js"
   },
   "devDependencies": {
-    "catw": "^1.0.1",
     "eslint": "^3.8.1",
     "eslint-config-es5": "^0.5.0",
     "rollup": "^0.36.3",
